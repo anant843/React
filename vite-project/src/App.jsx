@@ -1,9 +1,10 @@
+import Chai from "./Chai";
 
 function App() {
 
 
   return (
-   <h1>Starting a React with Vite |AS</h1>
+   <Chai/>
   )
 }
 
