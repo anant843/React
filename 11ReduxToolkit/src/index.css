@@ -1,0 +1,455 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --accent-primary: #818cf8;
+  --accent-primary-strong: #6366f1;
+  --accent-secondary: #2dd4bf;
+  --surface: #111827;
+  color: #e5e7eb;
+  background: #090d16;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #090d16;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(2.5rem, 8vw, 6rem) 1.25rem;
+}
+
+#root > * {
+  width: min(100%, 42rem);
+  margin-inline: auto;
+}
+
+#root h1 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-decoration: none;
+}
+
+#root form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
+}
+
+#root form input {
+  min-width: 0;
+  flex: 1;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  color: #f8fafc;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 0.65rem;
+  outline: none;
+  line-height: 1.4;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+#root form input::placeholder {
+  color: #94a3b8;
+}
+
+#root form input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+#root form button {
+  flex: 0 0 auto;
+  min-height: 3rem;
+  padding: 0.7rem 1.15rem;
+  color: #ffffff;
+  background: #6366f1;
+  border: 0;
+  border-radius: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+#root form button:hover {
+  background: #818cf8;
+}
+
+#root form button:active {
+  transform: translateY(1px);
+}
+
+#root > div:last-child {
+  margin-top: 3rem;
+}
+
+#root > div:last-child > div {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#root ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#root li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  background: rgba(30, 41, 59, 0.78);
+  border: 1px solid #263449;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+#root li > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #f8fafc;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+#root li button {
+  display: grid;
+  flex: 0 0 2.5rem;
+  place-items: center;
+  height: 2.5rem;
+  padding: 0;
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.85);
+  border: 1px solid rgba(248, 113, 113, 0.22);
+  border-radius: 0.55rem;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+#root li button:hover {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+#root li svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+@media (max-width: 30rem) {
+  #root {
+    padding-inline: 1rem;
+  }
+
+  #root form {
+    flex-direction: column;
+  }
+
+  #root form button {
+    width: 100%;
+  }
+}
+.app-shell {
+  width: min(100%, 48rem) !important;
+}
+
+.app-header {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--accent-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#root h1 {
+  text-align: left;
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  color: #94a3b8;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+#root form.todo-form {
+  margin-top: 2rem;
+}
+
+.todo-section {
+  margin-top: 3rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 0.35rem;
+  color: #64748b;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.task-count {
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+.filter-tabs {
+  display: inline-flex;
+  gap: 0.15rem;
+  margin-top: 1.25rem;
+  padding: 0.2rem;
+  background: #111827;
+  border: 1px solid #263244;
+  border-radius: 0.5rem;
+}
+
+.filter-tab {
+  padding: 0.45rem 0.7rem;
+  color: #64748b;
+  background: transparent;
+  border: 0;
+  border-radius: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  color: #cbd5e1;
+}
+
+.filter-tab.is-active {
+  color: #f8fafc;
+  background: #263244;
+}
+
+#root ul.todo-list {
+  margin-top: 1rem;
+}
+
+#root li.todo-card {
+  background: #111827;
+  border: 1px solid #263244;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#root li.todo-card.is-complete {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+#root li.todo-card .complete-button {
+  display: grid;
+  flex: 0 0 1.35rem;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  color: #0f172a;
+  background: transparent;
+  border: 1px solid #64748b;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+#root li.todo-card.is-complete .complete-button {
+  color: #f8fafc;
+  background: #6366f1;
+  border-color: #6366f1;
+}
+
+.todo-text {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+  color: #f8fafc;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.is-complete .todo-text {
+  color: #64748b;
+  text-decoration: line-through;
+  text-decoration-color: #64748b;
+}
+
+.todo-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+#root li.todo-card .text-button {
+  flex-shrink: 0;
+  padding: 0.4rem 0.5rem;
+  color: #94a3b8;
+  background: transparent;
+  border: 0;
+  border-radius: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#root li.todo-card .text-button:hover {
+  color: #e2e8f0;
+  background: #1e293b;
+}
+
+#root li.todo-card .text-button.danger-button:hover {
+  color: #fca5a5;
+}
+
+.edit-input {
+  min-width: 0;
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  color: #f8fafc;
+  background: #0f172a;
+  border: 1px solid #6366f1;
+  border-radius: 0.35rem;
+  outline: none;
+}
+
+.empty-state {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  color: #64748b;
+  background: #111827;
+  border: 1px dashed #334155;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 30rem) {
+  .app-header {
+    padding-bottom: 2rem;
+  }
+
+  #root li.todo-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .todo-text,
+  .edit-input {
+    align-self: center;
+  }
+
+  .todo-actions {
+    width: 100%;
+    margin-left: 2.1rem;
+  }
+
+  .filter-tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .filter-tab {
+    flex: 1;
+  }
+}
+
+#root form.todo-form input:focus {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.16);
+}
+
+#root form.todo-form button {
+  background: var(--accent-primary-strong);
+}
+
+#root form.todo-form button:hover {
+  background: var(--accent-primary);
+}
+
+.filter-tab.is-active {
+  background: #23464c;
+  box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.35);
+}
+
+#root li.todo-card {
+  background: var(--surface);
+}
+
+#root li.todo-card.is-complete .complete-button {
+  background: var(--accent-primary-strong);
+  border-color: var(--accent-primary-strong);
+}
+
+.edit-input {
+  border-color: var(--accent-secondary);
+}
+
+.empty-state {
+  background: var(--surface);
+  border-left: 2px solid var(--accent-secondary);
+}
